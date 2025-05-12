@@ -4,11 +4,10 @@ section.card-section {
   justify-content: center;
   gap: 10px;
 }
-section.card-section .card:hover {
-  box-shadow: 0 0 5px rgb(210, 210, 210);
-}
-section.card-section .card:hover a .item {
-  display: none;
+@media (max-width: 768px) {
+  section.card-section {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 20%));
+  }
 }
 section.card-section .card {
   width: 100%;
@@ -19,18 +18,23 @@ section.card-section .card {
   flex-direction: column;
   transition: transform 0.3s ease-out;
 }
+section.card-section .card:hover {
+  box-shadow: 0 0 5px rgb(210, 210, 210);
+}
+section.card-section .card:hover .item {
+  display: none;
+}
 section.card-section .card a {
   padding: 10px;
 }
 section.card-section .card a .card-header {
-  background-color: rgb(255, 255, 255);
   border-radius: 5px;
-  overflow: hidden;
 }
 section.card-section .card a .card-header .card-img {
   width: 100%;
   aspect-ratio: 1/1;
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
+  overflow: hidden;
 }
 section.card-section .card a .card-header .card-img img {
   max-width: 100%;
@@ -61,23 +65,23 @@ section.card-section .card a .card-body .price {
   display: flex;
   flex-direction: column;
 }
-section.card-section .card a .card-body .price :nth-child(1) {
+section.card-section .card a .card-body .new-price {
   font-weight: 800;
 }
-section.card-section .card a .card-body .price.discount :nth-child(1) {
+section.card-section .card a .card-body .price.discount .new-price {
   color: rgb(190, 0, 0);
 }
-section.card-section .card a .card-body .price.discount :nth-child(2) {
+section.card-section .card a .card-body .price.discount .old-price {
   font-size: 11px;
 }
 section.card-section .card a .item {
   position: absolute;
-  margin: 10px;
+  margin: 5px;
   top: 0;
   padding: 6px;
   color: rgb(255, 255, 255);
   border-radius: 5px;
-  font-size: 14px;
+  font-size: clamp(10px, 1.5vw, 14px);
 }
 section.card-section .card a .percentage {
   right: 0;
@@ -87,19 +91,6 @@ section.card-section .card a .percentage {
 section.card-section .card a .free {
   left: 0;
   background-color: rgb(197, 197, 197);
-}
-
-@media (max-width: 768px) {
-  .container {
-    width: 100%;
-    margin: 0 auto;
-  }
-  section.card-section {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 20%));
-  }
-  section.card-section .card a .item {
-    font-size: 10px;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
