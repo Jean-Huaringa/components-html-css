@@ -9,7 +9,8 @@ section.card-section {
     grid-template-columns: repeat(auto-fit, minmax(140px, 20%));
   }
 }
-section.card-section .card {
+
+.card {
   width: 100%;
   border: 1px solid rgb(210, 210, 210);
   border-radius: 5px;
@@ -18,63 +19,64 @@ section.card-section .card {
   flex-direction: column;
   transition: transform 0.3s ease-out;
 }
-section.card-section .card:hover {
+.card:hover {
   box-shadow: 0 0 5px rgb(210, 210, 210);
 }
-section.card-section .card:hover .item {
+.card:hover .item {
   display: none;
 }
-section.card-section .card a {
+.card a {
+  height: 100%;
   padding: 10px;
 }
-section.card-section .card a .card-header {
+.card a .card-header {
   border-radius: 5px;
 }
-section.card-section .card a .card-header .card-img {
+.card a .card-header .card-img {
   width: 100%;
   aspect-ratio: 1/1;
   border-radius: 5px;
   overflow: hidden;
 }
-section.card-section .card a .card-header .card-img img {
+.card a .card-header .card-img img {
   max-width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
-section.card-section .card a .card-body {
+.card a .card-body {
   padding: 10px 0 0;
   text-align: start;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-section.card-section .card a .card-body span {
+.card a .card-body span {
   font-size: 13px;
   color: rgb(99, 99, 99);
 }
-section.card-section .card a .card-body .description {
+.card a .card-body .description {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-section.card-section .card a .card-body .price {
+.card a .card-body .price {
   padding-top: 5px;
   display: flex;
   flex-direction: column;
 }
-section.card-section .card a .card-body .new-price {
+.card a .card-body .new-price {
   font-weight: 800;
 }
-section.card-section .card a .card-body .price.discount .new-price {
-  color: rgb(190, 0, 0);
+.card a .card-body .price.discount .new-price {
+  color: rgb(219, 78, 78);
 }
-section.card-section .card a .card-body .price.discount .old-price {
+.card a .card-body .price.discount .old-price {
   font-size: 11px;
 }
-section.card-section .card a .item {
+.card a .item {
   position: absolute;
   margin: 5px;
   top: 0;
@@ -83,14 +85,30 @@ section.card-section .card a .item {
   border-radius: 5px;
   font-size: clamp(10px, 1.5vw, 14px);
 }
-section.card-section .card a .percentage {
+.card a .percentage {
   right: 0;
   letter-spacing: 1px;
   background-color: rgb(219, 78, 78);
 }
-section.card-section .card a .free {
+.card a .free {
   left: 0;
   background-color: rgb(197, 197, 197);
+}
+
+section.card-section-slider {
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+}
+section.card-section-slider .card {
+  min-width: 180px;
+  max-width: 200px;
+}
+@media (max-width: 768px) {
+  section.card-section-slider .card {
+    min-width: 140px;
+    max-width: 160px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
