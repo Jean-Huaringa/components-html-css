@@ -1,0 +1,160 @@
+$color-principal: rgb(255, 255, 255);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
+  font-weight: 500;
+  color: rgb(30, 30, 30);
+  //letter-spacing: .5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: $color-principal;
+}
+
+.container {
+  width: 80%;
+  margin: 10px auto;
+}
+
+section.card-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,
+      minmax(200px, 20%));
+  justify-content: center;
+  gap: 10px;
+
+
+
+  .card:hover {
+    box-shadow: 0 0 5px rgb(210, 210, 210);
+    //transform: scale(1.05);
+    a {
+      .item {
+        display: none;
+      }
+    }
+  }
+
+  .card {
+    width: 100%;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform .3s ease-out;
+
+
+    a {
+      padding: 10px;
+
+      .card-header {
+        background-color: $color-principal;
+        border-radius: 5px;
+        overflow: hidden;
+
+        .card-img {
+          width: 100%;
+          aspect-ratio: 1 / 1;
+          border-radius: 5px 5px 0 0;
+
+          img {
+            max-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+
+      .card-body {
+        padding: 10px 0 0;
+        text-align: start;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        span {
+          font-size: 13px;
+          color: rgb(99, 99, 99);
+        }
+
+        .description {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .price {
+          padding-top: 5px;
+          display: flex;
+          flex-direction: column;
+
+          :nth-child(1) {
+            font-weight: 800;
+          }
+        }
+
+        .price.discount {
+          :nth-child(1) {
+            color: rgb(190, 0, 0);
+          }
+
+          :nth-child(2) {
+            font-size: 11px;
+          }
+        }
+      }
+
+      .item {
+        position: absolute;
+        margin: 10px;
+        top: 0;
+        padding: 6px;
+        color: rgb(255, 255, 255);
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      .percentage {
+        right: 0;
+        letter-spacing: 1px;
+        background-color: rgb(219, 78, 78);
+      }
+
+      .free {
+        left: 0;
+        background-color: rgb(197, 197, 197);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  section.card-section {
+    grid-template-columns: repeat(auto-fit,
+        minmax(140px, 20%));
+
+    .card {
+      a {
+        .item {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
