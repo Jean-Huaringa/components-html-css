@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <lin<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+
+        <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
+</head>
+
+<body>
+    <div id="notification" role="region" aria-label="Centro de notificaciones">
+        <div role="alert" class="message message-danger">
+            <span id="error" class="icon"></span>
+            <span class="menssage-text">
+                Error al guardar los datos.
+            </span>
+        </div>
+        <div role="alert" class="message message-warning">
+            <span id="alert" class="icon"></span>
+            <span class="menssage-text">
+                La sesión está por expirar.
+            </span>
+        </div>
+        <div role="status" class="message message-success">
+            <span id="save" class="icon"></span>
+            <span class="menssage-text">
+                ¡Registro exitoso!
+            </span>
+        </div>
+        <div role="status" class="message message-info">
+            <span id="help" class="icon"></span>
+            <span class="menssage-text">
+                Nueva actualización disponible.
+            </span>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    lottie.loadAnimation({
+        container: document.getElementById('save'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '../icon-animation/save.json' // puede ser local o URL
+    });
+    lottie.loadAnimation({
+        container: document.getElementById('error'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '../icon-animation/error.json' // puede ser local o URL
+    });
+    lottie.loadAnimation({
+        container: document.getElementById('alert'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '../icon-animation/alert.json' // puede ser local o URL
+    });
+    lottie.loadAnimation({
+        container: document.getElementById('help'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '../icon-animation/help.json' // puede ser local o URL
+    });
+</script>
