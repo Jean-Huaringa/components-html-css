@@ -1,0 +1,91 @@
+.aside-filter {
+  max-width: 290px;
+  padding: 10px 20px;
+}
+.aside-filter .header {
+  padding: 10px 0;
+}
+.aside-filter .header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.aside-filter .body {
+  padding: 10px 0;
+}
+.aside-filter .body h3 {
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.aside-filter .body .label-section {
+  width: 100%;
+  font-weight: 700;
+  padding: 15px 20px 13px 5px;
+  display: inline-block;
+  cursor: pointer;
+  color: rgb(100, 100, 100);
+}
+.aside-filter .footer {
+  width: 100%;
+  padding: 10px 0;
+  position: sticky;
+  bottom: 0;
+  background-color: rgb(255, 255, 255);
+}
+.aside-filter .footer button {
+  width: 100%;
+  cursor: pointer;
+  padding: 15px 20px;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+.section-filter {
+  border-bottom: 1px solid rgb(182, 182, 182);
+}
+.section-filter .ul-filter {
+  max-height: 0;
+  transition: 1s max-height;
+}
+.section-filter .checkbox-section:checked ~ .ul-filter {
+  max-height: 160px;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+}
+
+.ul-filter {
+  max-height: 160px;
+  overflow-y: scroll;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.ul-filter li {
+  padding: 5px;
+}
+.ul-filter li label {
+  width: 100%;
+  display: inline-block;
+  cursor: pointer;
+}
+.ul-filter li label:before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  -webkit-transition: background 0.5s ease;
+  transition: background 0.5s ease;
+  vertical-align: middle;
+  font-family: FontAwesome;
+  border-radius: 6px;
+  margin-right: 6px;
+  border: 1px solid #ccc;
+  background: rgb(255, 255, 255);
+}
+.ul-filter li input:checked + label:before {
+  background: #ff9a02;
+  border-color: transparent;
+  content: "X";
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+

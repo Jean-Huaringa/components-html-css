@@ -1,0 +1,106 @@
+.aside-filter {
+    max-width: 290px;
+    padding: 10px 20px;
+
+    .header {
+        padding: 10px 0;
+
+        h2 {
+            //border-left: 10px solid black;
+            //padding: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    }
+
+    .body {
+        padding: 10px 0;
+
+        h3 {
+            font-size: .8rem;
+            font-weight: 800;
+        }
+
+        .label-section {
+            width: 100%;
+            font-weight: 700;
+            padding: 15px 20px 13px 5px;
+            display: inline-block;
+            cursor: pointer;
+            color: rgb(100, 100, 100);
+        }
+    }
+
+    .footer {
+        width: 100%;
+        padding: 10px 0;
+        position: sticky;
+        bottom: 0;
+        background-color: rgb(255, 255, 255);
+
+        button {
+            width: 100%;
+            cursor: pointer;
+            padding: 15px 20px;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+    }
+}
+
+.section-filter {
+    border-bottom: 1px solid rgb(182, 182, 182);
+
+    .ul-filter {
+        max-height: 0;
+        transition: 1s max-height;
+    }
+
+    .checkbox-section:checked~.ul-filter {
+        max-height: 160px;
+        overflow-y: scroll;
+        margin-bottom: 20px;
+    }
+}
+
+
+.ul-filter {
+    max-height: 160px;
+    overflow-y: scroll;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+    li {
+        padding: 5px;
+
+        label {
+            width: 100%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        label:before {
+            content: "";
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            -webkit-transition: background .5s ease;
+            transition: background .5s ease;
+            vertical-align: middle;
+            font-family: FontAwesome;
+            border-radius: 6px;
+            margin-right: 6px;
+            border: 1px solid #ccc;
+            background: rgb(255, 255, 255);
+        }
+
+        input:checked+label:before {
+            background: #ff9a02;
+            border-color: transparent;
+            content: "X";
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+    }
+}
