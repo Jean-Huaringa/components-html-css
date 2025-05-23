@@ -1,0 +1,179 @@
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: progress-drow auto both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 100vh;
+    background-color: antiquewhite;
+
+    .header-home {
+        background-color: rgb(204, 204, 204);
+        text-align: center;
+        padding: 10px 0 10px;
+        display: none;
+    }
+
+    .header-body {
+        width: 100%;
+        padding: 10px 50px;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .hd-icon {
+        width: 20px;
+        height: 20px;
+        fill: rgb(10, 10, 10);
+    }
+
+    #checkbox-menu_bar:checked~#cont-aside {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    #checkbox-menu_bar:checked~#cont-aside>#mn-aside {
+        transform: translateX(0%);
+    }
+}
+
+.header-component {
+    align-items: center;
+    gap: 20px;
+
+    .hd-item {
+        height: 40px;
+    }
+
+    .hd-btn {
+        height: 100%;
+        border-radius: 50px;
+        cursor: pointer;
+        padding: 0px 22px;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .hd-btn.in-flex {
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+    }
+
+    .hd-btn.in-circle {
+        padding: 0;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+@keyframes progress-drow {
+    90% {}
+
+    100% {
+        background: rgb(255, 249, 235);
+    }
+}
+
+/************************************************************************/
+/***************** apartado para los Side y sus estilos *****************/
+/************************************************************************/
+
+
+#cont-aside {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+
+    aside {
+        width: 400px;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
+        transition: 500ms all ease;
+
+        .header {
+            width: 100%;
+            height: 10%;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 20px;
+
+            h2 {
+                font-size: 1.2em;
+                margin: 0px 10px;
+            }
+
+            .label-close {
+                height: 28px;
+                padding: 5px;
+                display: inline-block;
+            }
+
+            .label-close>svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            .label-close:hover svg {
+                fill: rgb(255, 0, 0);
+            }
+        }
+
+        .body {
+            width: 100%;
+            height: 90%;
+            overflow: auto;
+            padding: 10px;
+
+            .mn-item {
+                width: 100%;
+                border-radius: 4px;
+                margin-bottom: 5px;
+                transition: 300ms all;
+
+
+                a {
+                    width: 100%;
+                    height: 100%;
+                    padding: 20px 10px;
+                    display: inline-block;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: rgb(151, 151, 151);
+                }
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.05);
+
+                    a {
+                        color: rgb(255, 191, 42);
+                    }
+                }
+            }
+        }
+
+        .body::-webkit-scrollbar {
+            width: 5px;
+            border-radius: 40px;
+        }
+
+        .body::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    #mn-aside {
+        transform: translateX(-100%);
+    }
+
+    #mn-aside>.header {
+        background-color: rgb(255 211 106);
+    }
+}

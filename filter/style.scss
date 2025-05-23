@@ -91,12 +91,12 @@
             font-family: FontAwesome;
             border-radius: 6px;
             margin-right: 6px;
-            border: 1px solid #ccc;
+            border: 1px solid rgb(204, 204, 204);
             background: rgb(255, 255, 255);
         }
 
         input:checked+label:before {
-            background: #ff9a02;
+            background: rgb(255, 154, 2);
             border-color: transparent;
             content: "X";
             text-align: center;

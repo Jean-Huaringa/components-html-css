@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-home">
+            LOGO
+        </div>
+        <div class="header-body in-flex">
+            <ul class="header-component in-flex">
+                <li class="hd-item">
+                    <label for="checkbox-menu_bar" class="hd-btn in-flex in-circle">
+                        <svg class="hd-icon">
+                            <use href="../icon-static/icon.svg#menu-bar"></use>
+                        </svg>
+                    </label>
+                </li>
+                <li class="hd-item">
+                    <a routerLink="/sign-in" class="hd-btn in-flex">
+                        <svg class="hd-icon">
+                            <use href="../icon-static/icon.svg#logo-icon"></use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="header-component in-flex">
+                <li class="hd-item">
+                    <a routerLink="/sign-in" class="hd-btn in-flex">
+                        <svg class="hd-icon">
+                            <use href="../icon-static/icon.svg#user-icon"></use>
+                        </svg>
+                        <span>Iniciar sesión</span>
+                    </a>
+                </li>
+                <li class="hd-item">
+                    <a routerLink="/sign-up" class="hd-btn in-flex">
+                        <svg class="hd-icon">
+                            <use href="../icon-static/icon.svg#user-icon"></use>
+                        </svg>
+                        <span>Crear usuario</span>
+                    </a>
+                </li>
+                <li class="hd-item">
+                    <a routerLink="/sign-in" class="hd-btn in-flex in-circle">
+                        <svg class="hd-icon">
+                            <use href="../icon-static/icon.svg#car-icon"></use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <input type="checkbox" class="none" id="checkbox-car" />
+        <input type="checkbox" class="none" id="checkbox-menu_bar" />
+
+        <div id="cont-aside">
+            <aside id="mn-aside">
+                <div class="header in-flex">
+                    <h2>¡Hola!</h2>
+
+                    <label for="checkbox-menu_bar" class="label-close">
+                        <svg class="hd-icon">
+                            <use href="../icon-static/icon.svg#close-icon"></use>
+                        </svg>
+                    </label>
+                </div>
+                <div class="body">
+                    <div class="mn-item">
+                        <a routerLink="/producto/list">Productos</a>
+                    </div>
+                    <hr>
+                </div>
+            </aside>
+        </div>
+    </header>
+</body>
+
+</html>
